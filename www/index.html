@@ -12,6 +12,10 @@
 		<!-- Latest compiled and minified JavaScript -->	
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.0.1/jquery.rateyo.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.0.1/jquery.rateyo.min.js"></script>
 		
 		<style>
       html, body {
@@ -26,6 +30,9 @@
         height: 100%;
       }
 	  body{padding-top:70px}
+	  .right {
+		float: right;
+	}
     </style>
 	
 	</head>
@@ -61,45 +68,261 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>	
-	<div id="search_results" class="col-md-6">
-	<div class="list-group">
-		<a href="#" class="list-group-item">
-			<h4 class="list-group-item-heading">Bierman Place Apartments</h4>
-			<img src="Img/bierman.jpg" height="10%" width="10%"/>
-			
-			<a class="btn btn-primary" href="index2.html">Take a Tour</a>
-			
-		</a>
-		<a href="#" class="list-group-item">
-			<h4 class="list-group-item-heading">The Marshall</h4>
-			<img src="Img/The_Marshall.jpg" height="10%" width="10%"/>
-			<a class="btn btn-primary" href="index2.html">Take a Tour</a>
-		</a>
-		<a href="#" class="list-group-item">
-			<h4 class="list-group-item-heading">The Radius</h4>
-			<img src="Img/The_Radius.jpeg" height="10%" width="10%"/>
-			<a class="btn btn-primary" href="index2.html">Take a Tour</a>
-		</a>
-		<a href="#" class="list-group-item">
-			<h4 class="list-group-item-heading">Floco</h4>
-			<img src="Img/Floco.jpg" height="10%" width="10%"/>
-			<a class="btn btn-primary" href="index2.html">Take a Tour</a>
-		</a>
+	
+	<div id="search_results" style="overflow-y: scroll;" class="col-md-7">
+	<div class="row">
+		<div class="col-lg-2 col-md-2 col-sm-2">
+		<label>Housing Type:</label>
+		</div>
+		<div class="col-lg-9 col-md-9 col-sm-9">
+			<label class="checkbox-inline"><input type="checkbox" value="">Dormitory</label>
+			<label class="checkbox-inline"><input type="checkbox" value="">Apartment</label>
+			<label class="checkbox-inline"><input type="checkbox" value="">House</label>
+		</div>
+	
 	</div>
-
+	<div class="row">
+		<div class="col-lg-2">
+		<label>Price (Monthly):</label>
+		</div>
+		<div class="col-lg-9">
+			<div id="slider-range"></div>
+		</div>
+	
 	</div>
-	<div id="map" class="col-md-6"></div>
+	<div class="row">
+		<div class="col-lg-2">
+		<label>Bedrooms:</label>
+		</div>
+		<div class="col-lg-9">
+			<div id="slider-range"></div>
+		</div>
+	
+	</div>
+	<div class = "row">
+   
+   <div class = "col-sm-12 col-md-6">
+      <div class = "thumbnail">
+		 <div>
+			<img src = "Img/bierman.png" height="100%" width="100%" alt = "Generic placeholder thumbnail">
+		 </div>
+		 <div class = "caption">
+         <h3>Bierman Place Apartments</h3>
+         <p>Housing Type: Apartment</p>		 
+         <p>Distane from Campus: 3.9 miles</p>
+         <p>Monthly Rate: $500-$700</p>
+		 <p>Bedrooms: 1-4</p>
+         <div class="row caption">
+            <a href = "index2.html" class = "btn btn-primary col-md-3 col-sm-3" role = "button">
+               Tour
+            </a> 
+            
+            <div id="bierman" align="right" class = "col-md-9 col-sm-9 right"></div>
+         </div>
+         
+      </div>
+      </div>
+      
+      
+   </div>
+   
+   <div class = "col-sm-12 col-md-6">
+      <div class = "thumbnail">
+		 <div>
+			<img src = "Img/The_Marshall.png" height="100%" width="100%" alt = "Generic placeholder thumbnail">
+		 </div>
+		 <div class = "caption">
+         <h3>The Marshall</h3>
+         <p>Housing Type: Apartment</p>		 
+         <p>Distane from Campus: 3.9 miles</p>
+         <p>Monthly Rate: $500-$700</p>
+		 <p>Bedrooms: 1-4</p>
+         <div class="row caption">
+            <a href = "index2.html" class = "btn btn-primary col-md-3 col-sm-3" role = "button">
+               Tour
+            </a> 
+            
+            <div id="marshall" align="right" class = "col-md-9 col-sm-9 right"></div>
+         </div>
+         
+      </div>
+      </div>
+    
+      
+   </div>  
+</div>
+<div class = "row">
+   
+   <div class = "col-sm-12 col-md-6">
+      <div class = "thumbnail" onmouseover="changeIcon()" onmouseleave="changeIconBack()">
+		 <div>
+			<img src = "Img/Floco.jpg" height="100%" width="100%" alt = "Generic placeholder thumbnail">
+		 </div>
+		 <div class = "caption">
+         <h3>Floco</h3>
+         <p>Housing Type: Apartment</p>		 
+         <p>Distane from Campus: 3.9 miles</p>
+         <p>Monthly Rate: $500-$700</p>
+		 <p>Bedrooms: 1-4</p>
+         <div class="row caption">
+            <a href = "index2.html" class = "btn btn-primary col-md-3 col-sm-3" role = "button">
+               Tour
+            </a> 
+            
+            <div id="floco" align="right" class = "col-md-9 col-sm-9 right"></div>
+         </div>
+         
+      </div>
+      </div>
+      
+      
+   </div>
+   
+   <div class = "col-sm-12 col-md-6">
+      <div class = "thumbnail">
+	  
+		 <div>
+		 <a onclick="zoom()" class="">
+			<img src = "Img/The_Radius.png" height="100%" width="100%" alt = "Generic placeholder thumbnail">
+			</a>
+		 </div>
+		 <div class = "caption">		 
+         <h3>The Radius</h3>	
+		<p>Housing Type: Apartment</p>		 
+         <p>Distane from Campus: 3.9 miles</p>
+         <p>Monthly Rate: $500-$700</p>
+		 <p>Bedrooms: 1-4</p>
+         <div class="row caption">
+            <a href = "index2.html" class = "btn btn-primary col-md-3 col-sm-3" role = "button">
+               Tour
+            </a> 
+           <div id="radius" align="right" class = "col-md-8 col-sm-8 right"></div>
+		   <p class="col-md-1 col-sm-1">(10)</p>
+         </div>
+         
+      </div>
+	  
+      </div>
+	</div>
+	</div>
+	
+<nav>
+<p>1-4 of 44 Living Spaces</p>
+  <ul class="pagination col-md-12 col-sm-12">
+    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+    <li class=""><a href="#">1 <span class="sr-only">(current)</span></a></li>
+    <li class=""><a href="#">2 <span class="sr-only">(current)</span></a></li>
+	<li class=""><a href="#">3 <span class="sr-only">(current)</span></a></li>
+	<li class=""><a href="#">... <span class="sr-only">(current)</span></a></li>
+	<li class=""><a href="#">11 <span class="sr-only">(current)</span></a></li>
+  </ul> 
+</nav>
+</div>
+	<div id="map" class="col-md-5"></div>
 	
 	
 	
 	 <script>
+	 function changeIcon(){
+	 marker3.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
+	 }
+	 function changeIconBack(){
+		marker3.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
+	 }
+	 var marker3;
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+          center: {lat: 44.9700537, lng: -93.2317008},
+          zoom: 13
         });
+		
+		var contentString = '<div id="content">'+
+		'<p>Bierman Place Apartments - 3.9 miles</p>'+
+		'<iframe id="tour"  frameborder="0" src="http://toursler.com/irvine-pacific-arts-plaza?mode=touronly&suppressHints=true">' + 
+		'</iframe>' + '<p><a href="index2.html" >See More</a></p>' + 
+      '</div>';
+	  var infowindow = new google.maps.InfoWindow({
+		content: contentString
+		});
+
+		var schoolMarker = new google.maps.Marker({
+		 
+		position: {lat: 44.973859, lng: -93.227865},
+		icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+		draggable: false,
+		map: map
+		});
+		schoolMarker.addListener('click', function() {
+		infowindow.open(map, schoolMarker);
+		});
+		var marker1 = new google.maps.Marker({
+		position: {lat: 44.982556, lng: -93.233843},
+		animation: google.maps.Animation.DROP,
+		icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+		draggable: false,
+		map: map
+		});
+		var marker2 = new google.maps.Marker({
+		position: {lat: 44.982163, lng: -93.234872},
+		animation: google.maps.Animation.DROP,
+		icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+		draggable: false,
+		map: map
+		});
+		marker3 = new google.maps.Marker({
+		position: {lat: 44.981308, lng:-93.241671},
+		animation: google.maps.Animation.DROP,
+		icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+		draggable: false,
+		map: map
+		});
+		var marker4 = new google.maps.Marker({ 
+		position: {lat: 44.983395, lng: -93.232096},
+		animation: google.maps.Animation.DROP,
+		icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+		draggable: false,
+		map: map
+		});
       }
+	  $(function () {
+ 
+		$("#bierman").rateYo({
+		rating: 3.6,
+		readonly: true
+		});
+ 
+		});
+		$(function () {
+ 
+		$("#marshall").rateYo({
+		rating: 4.2,
+		readonly: true
+		});
+ 
+		});
+		$(function () {
+ 
+		$("#floco").rateYo({
+		rating: 2,
+		readonly: true
+		});
+ 
+		});
+		$(function () {
+ 
+		$("#radius").rateYo({
+		rating: 4.8,
+		readonly: true
+		});
+ 
+		});
+		function zoom(){
+		map.panTo({lat: 44.983395, lng: -93.232096});
+		map.setZoom(18);
+		
+		}
+		
     </script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD07g1nDrAvE5mAmHw3y5fQDyfZJqfOEbs&callback=initMap" async defer></script>
 	</body>
