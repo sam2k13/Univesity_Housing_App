@@ -203,8 +203,141 @@
 	  
       </div>
 	</div>
-	</div>
+	<div class="row">
+		<div class="col-lg-2 col-md-2 col-sm-2">
+		<label>Housing Type:</label>
+		</div>
+		<div class="col-lg-9 col-md-9 col-sm-9">
+			<label class="checkbox-inline"><input type="checkbox" value="">Dormitory</label>
+			<label class="checkbox-inline"><input type="checkbox" value="">Apartment</label>
+			<label class="checkbox-inline"><input type="checkbox" value="">House</label>
+		</div>
 	
+	</div>
+	<div class="row">
+		<div class="col-lg-2">
+		<label>Price (Monthly):</label>
+		</div>
+		<div class="col-lg-9">
+			<div id="slider-range"></div>
+		</div>
+	
+	</div>
+	<div class="row">
+		<div class="col-lg-2">
+		<label>Bedrooms:</label>
+		</div>
+		<div class="col-lg-9">
+			<div id="slider-range"></div>
+		</div>
+	
+	</div>
+	<div class = "row">
+   
+   <div class = "col-sm-12 col-md-6">
+      <div class = "thumbnail" onmouseover="changeMarker1Icon()" onmouseleave="changeIcon1Back()">
+		 <div>
+			<img src = "Img/bierman.png" height="100%" width="100%" alt = "Generic placeholder thumbnail">
+		 </div>
+		 <div class = "caption">
+         <h3>Bierman Place Apartments</h3>
+         <p>Housing Type: Apartment</p>		 
+         <p>Distane from Campus: 3.9 miles</p>
+         <p>Monthly Rate: $500-$700</p>
+		 <p>Bedrooms: 1-4</p>
+         <div class="row caption">
+            <a href = "index2.html" class = "btn btn-primary col-md-3 col-sm-3" role = "button">
+               Tour
+            </a> 
+            
+            <div id="bierman" align="right" class = "col-md-9 col-sm-9 right"></div>
+         </div>
+         
+      </div>
+      </div>
+      
+      
+   </div>
+   
+   <div class = "col-sm-12 col-md-6">
+      <div class = "thumbnail" onmouseover="changeMarker2Icon()" onmouseleave="changeIcon2Back()">
+		 <div>
+			<img src = "Img/The_Marshall.png" height="100%" width="100%" alt = "Generic placeholder thumbnail">
+		 </div>
+		 <div class = "caption">
+         <h3>The Marshall</h3>
+         <p>Housing Type: Apartment</p>		 
+         <p>Distane from Campus: 3.9 miles</p>
+         <p>Monthly Rate: $500-$700</p>
+		 <p>Bedrooms: 1-4</p>
+         <div class="row caption">
+            <a href = "index2.html" class = "btn btn-primary col-md-3 col-sm-3" role = "button">
+               Tour
+            </a> 
+            
+            <div id="marshall" align="right" class = "col-md-9 col-sm-9 right"></div>
+         </div>
+         
+      </div>
+      </div>
+    
+      
+   </div>  
+</div>
+<div class = "row">
+   
+   <div class = "col-sm-12 col-md-6">
+      <div class = "thumbnail" onmouseover="changeMarker3Icon()" onmouseleave="changeIcon3Back()">
+		 <div>
+			<img src = "Img/Floco.jpg" height="100%" width="100%" alt = "Generic placeholder thumbnail">
+		 </div>
+		 <div class = "caption">
+         <h3>Floco</h3>
+         <p>Housing Type: Apartment</p>		 
+         <p>Distane from Campus: 3.9 miles</p>
+         <p>Monthly Rate: $500-$700</p>
+		 <p>Bedrooms: 1-4</p>
+         <div class="row caption">
+            <a href = "index2.html" class = "btn btn-primary col-md-3 col-sm-3" role = "button">
+               Tour
+            </a> 
+            
+            <div id="floco" align="right" class = "col-md-9 col-sm-9 right"></div>
+         </div>
+         
+      </div>
+      </div>
+      
+      
+   </div>
+   
+   <div class = "col-sm-12 col-md-6">
+      <div class = "thumbnail" onmouseover="changeMarker4Icon()" onmouseleave="changeIcon4Back()">
+	  
+		 <div>
+		 <a onclick="zoom()" class="">
+			<img src = "Img/The_Radius.png" height="100%" width="100%" alt = "Generic placeholder thumbnail">
+			</a>
+		 </div>
+		 <div class = "caption">		 
+         <h3>The Radius</h3>	
+		<p>Housing Type: Apartment</p>		 
+         <p>Distane from Campus: 3.9 miles</p>
+         <p>Monthly Rate: $500-$700</p>
+		 <p>Bedrooms: 1-4</p>
+         <div class="row caption">
+            <a href = "index2.html" class = "btn btn-primary col-md-3 col-sm-3" role = "button">
+               Tour
+            </a> 
+           <div id="radius" align="right" class = "col-md-8 col-sm-8 right"></div>
+         </div>
+         
+      </div>
+	  
+      </div>
+	</div>
+	</div>
+	</div>
 <nav>
 <p>1-4 of 44 Living Spaces</p>
   <ul class="pagination col-md-12 col-sm-12">
@@ -262,7 +395,7 @@
 		'</iframe>'+
 		 '</div>'+
 		 '<div class = "caption">	' +
-         '<h3>The Radius<span style="float:right"><a>See More</a></span></h3>	' +
+         '<h3>The Radius<span style="float:right"><a href="index2.html">See More</a></span></h3>	' +
 		'<p>Housing Type: Apartment</p>		' +
          '<p>Distane from Campus: 3.9 miles</p>'+
          '<p>Monthly Rate: $500-$700</p>'+
@@ -283,15 +416,16 @@
 		draggable: false,
 		map: map
 		});
-		schoolMarker.addListener('click', function() {
-		infowindow.open(map, schoolMarker);
-		});
+		
 		marker1 = new google.maps.Marker({
 		position: {lat: 44.982556, lng: -93.233843},
 		animation: google.maps.Animation.DROP,
 		icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
 		draggable: false,
 		map: map
+		});
+		marker1.addListener('click', function() {
+		infowindow.open(map, marker1);
 		});
 		marker2 = new google.maps.Marker({
 		position: {lat: 44.982163, lng: -93.234872},
@@ -300,6 +434,9 @@
 		draggable: false,
 		map: map
 		});
+		marker2.addListener('click', function() {
+		infowindow.open(map, marker2);
+		});
 		marker3 = new google.maps.Marker({
 		position: {lat: 44.981308, lng:-93.241671},
 		animation: google.maps.Animation.DROP,
@@ -307,12 +444,18 @@
 		draggable: false,
 		map: map
 		});
+		marker3.addListener('click', function() {
+		infowindow.open(map, marker3);
+		});
 		marker4 = new google.maps.Marker({ 
 		position: {lat: 44.983395, lng: -93.232096},
 		animation: google.maps.Animation.DROP,
 		icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
 		draggable: false,
 		map: map
+		});
+		marker4.addListener('click', function() {
+		infowindow.open(map, marker4);
 		});
       }
 	  $(function () {
