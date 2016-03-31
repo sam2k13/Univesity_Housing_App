@@ -29,7 +29,7 @@
 	  #search_results {
         height: 100%;
       }
-	  body{padding-top:70px}
+	  body{padding-top:50px}
 	  .right {
 		float: right;
 	}
@@ -102,7 +102,7 @@
 	<div class = "row">
    
    <div class = "col-sm-12 col-md-6">
-      <div class = "thumbnail">
+      <div class = "thumbnail" onmouseover="changeMarker1Icon()" onmouseleave="changeIcon1Back()">
 		 <div>
 			<img src = "Img/bierman.png" height="100%" width="100%" alt = "Generic placeholder thumbnail">
 		 </div>
@@ -127,7 +127,7 @@
    </div>
    
    <div class = "col-sm-12 col-md-6">
-      <div class = "thumbnail">
+      <div class = "thumbnail" onmouseover="changeMarker2Icon()" onmouseleave="changeIcon2Back()">
 		 <div>
 			<img src = "Img/The_Marshall.png" height="100%" width="100%" alt = "Generic placeholder thumbnail">
 		 </div>
@@ -154,7 +154,7 @@
 <div class = "row">
    
    <div class = "col-sm-12 col-md-6">
-      <div class = "thumbnail" onmouseover="changeIcon()" onmouseleave="changeIconBack()">
+      <div class = "thumbnail" onmouseover="changeMarker3Icon()" onmouseleave="changeIcon3Back()">
 		 <div>
 			<img src = "Img/Floco.jpg" height="100%" width="100%" alt = "Generic placeholder thumbnail">
 		 </div>
@@ -179,7 +179,7 @@
    </div>
    
    <div class = "col-sm-12 col-md-6">
-      <div class = "thumbnail">
+      <div class = "thumbnail" onmouseover="changeMarker4Icon()" onmouseleave="changeIcon4Back()">
 	  
 		 <div>
 		 <a onclick="zoom()" class="">
@@ -197,7 +197,6 @@
                Tour
             </a> 
            <div id="radius" align="right" class = "col-md-8 col-sm-8 right"></div>
-		   <p class="col-md-1 col-sm-1">(10)</p>
          </div>
          
       </div>
@@ -223,13 +222,31 @@
 	
 	
 	 <script>
-	 function changeIcon(){
+	 function changeMarker3Icon(){
 	 marker3.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
 	 }
-	 function changeIconBack(){
+	 function changeIcon3Back(){
 		marker3.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
 	 }
-	 var marker3;
+	 function changeMarker2Icon(){
+	 marker2.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
+	 }
+	 function changeIcon2Back(){
+		marker2.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
+	 }
+	 function changeMarker1Icon(){
+	 marker1.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
+	 }
+	 function changeIcon1Back(){
+		marker1.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
+	 }
+	 function changeMarker4Icon(){
+	 marker4.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
+	 }
+	 function changeIcon4Back(){
+		marker4.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
+	 }
+	 var marker1,marker2,marker3,marker4;
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -237,10 +254,23 @@
           zoom: 13
         });
 		
-		var contentString = '<div id="content">'+
-		'<p>Bierman Place Apartments - 3.9 miles</p>'+
-		'<iframe id="tour"  frameborder="0" src="http://toursler.com/irvine-pacific-arts-plaza?mode=touronly&suppressHints=true">' + 
-		'</iframe>' + '<p><a href="index2.html" >See More</a></p>' + 
+		var contentString = '<div>'+
+	  
+		 '<div>' +
+		 '<iframe id="tour" frameborder="0" '+
+		'src="http://toursler.com/irvine-pacific-arts-plaza?mode=touronly&suppressHints=true">'+
+		'</iframe>'+
+		 '</div>'+
+		 '<div class = "caption">	' +
+         '<h3>The Radius<span style="float:right"><a>See More</a></span></h3>	' +
+		'<p>Housing Type: Apartment</p>		' +
+         '<p>Distane from Campus: 3.9 miles</p>'+
+         '<p>Monthly Rate: $500-$700</p>'+
+		 '<p>Bedrooms: 1-4</p>'+
+         
+         
+      '</div>'+
+	  
       '</div>';
 	  var infowindow = new google.maps.InfoWindow({
 		content: contentString
@@ -256,14 +286,14 @@
 		schoolMarker.addListener('click', function() {
 		infowindow.open(map, schoolMarker);
 		});
-		var marker1 = new google.maps.Marker({
+		marker1 = new google.maps.Marker({
 		position: {lat: 44.982556, lng: -93.233843},
 		animation: google.maps.Animation.DROP,
 		icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
 		draggable: false,
 		map: map
 		});
-		var marker2 = new google.maps.Marker({
+		marker2 = new google.maps.Marker({
 		position: {lat: 44.982163, lng: -93.234872},
 		animation: google.maps.Animation.DROP,
 		icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
@@ -277,7 +307,7 @@
 		draggable: false,
 		map: map
 		});
-		var marker4 = new google.maps.Marker({ 
+		marker4 = new google.maps.Marker({ 
 		position: {lat: 44.983395, lng: -93.232096},
 		animation: google.maps.Animation.DROP,
 		icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',

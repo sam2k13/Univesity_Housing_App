@@ -20,10 +20,10 @@
         padding: 0;
       }      
 	  #search, #tour{
-        height: 100%;
-		width: 100%;
+        height: 90%;
+		max-height:90%;
       }
-	  body{padding-top:70px}
+	  body{padding-top:50px}
     </style>
 	
 	</head>
@@ -59,11 +59,30 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>	
-	<div id="search">
-	<iframe id="tour" frameborder="0" 
+	<div id="search" class="row">
+	<div style="overflow-y: scroll;height:90%" class="col-md-3 col-lg-3">
+		<ul class="nav nav-pills nav-stacked">
+		<li class="active"><a href="#">Facility</a></li>
+		<li><a href="#">4 Bedroom - 3 Bath<span style="float:right">$2575/month</span></a></li>
+		<li><a href="#">4 Bedroom - 2 Bath<span style="float:right">$2550/month</span></a></li>
+		<li><a href="#">2 Bedroom - 1 Bath<span style="float:right">$2600/month</span></a></li>
+		<li class="disabled"><a href="#">1 Bedroom - 1 Bath<span style="float:right">$2600/month</span></a></li>
+		</ul>
+	</div>
+	
+	<iframe id="tour" class="col=md-9 col-lg-9" frameborder="0" 
 	src="http://toursler.com/irvine-pacific-arts-plaza?mode=touronly&suppressHints=true">
 </iframe>
-	
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-3 col-lg-3">
+			<img src = "Img/bierman.png" height="100%" width="100%" alt = "Generic placeholder thumbnail">
+		</div>
+		<div class="col-md-9 col-sm-9 col-lg-9">
+			<h1>Bierman Place Apartments</h1>
+			<h3>952-943-9320</h3>
+			<h3><a>www.Bierman.com<a/></h3>
+		</div>
 	
 	
 	</div>
