@@ -1,0 +1,23 @@
+{
+  "name": "utours",
+  "version": "1.0.0",
+  "description": "Tour Student Housing Online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sam2k13/Univesity_Housing_App.git"
+  },
+  "author": "Sam Kleist",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sam2k13/Univesity_Housing_App/issues"
+  },
+  "homepage": "https://github.com/sam2k13/Univesity_Housing_App#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mysql": "^2.10.2"
+  }
+}
